@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo
+    restart: always
+    env_file:
+      - secret.env
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    restart: always
+    hostname: chrome
+    privileged: true
+    shm_size: 2g
+
+  kp_checker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - secret.env
+    container_name: kp_checker
+    depends_on:
+      - mongo

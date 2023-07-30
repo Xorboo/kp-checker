@@ -1,0 +1,19 @@
+# IDE Config
+.idea/
+.vscode/
+
+# Docker Volume
+data/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets
+secret.env
+mongo-init.js

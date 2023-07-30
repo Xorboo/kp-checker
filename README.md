@@ -29,7 +29,7 @@ docker start kp_checker
 This file initializes MongoDB with the list of users that would be checked. For each user you need:
 
 - `name` - any **unique** display name that would be shown in the report (also used for query filtering)
-- `login`, `password` - user auth data for [klient.gdansk.uw.gov.pl](https://klient.gdansk.uw.gov.pl)
+- `login`, `password` - user auth data for [klient.gdansk.uw.gov.pl](https://klient.gdansk.uw.gov.pl) ⚠️
 - `telegram` - user telegram ID. You can find your own ID by [@userinfobot](https://t.me/userinfobot)
 
 `data` field would store last known state. You can always add more users to db manually (accessible over 27017 port).
